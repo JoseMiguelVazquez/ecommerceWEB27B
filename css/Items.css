@@ -1,0 +1,16 @@
+.items-container .items {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+.items-container .items .item {
+  width: 300px;
+  background-color: white;
+  margin: 8px;
+  border-radius: 16px;
+}
+.items-container .items .item img {
+  width: 100%;
+  height: 300px;
+  border-radius: 16px;
+}

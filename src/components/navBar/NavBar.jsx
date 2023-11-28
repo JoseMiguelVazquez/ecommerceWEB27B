@@ -1,5 +1,5 @@
-import React from 'react'
 import './NavBar.scss'
+import { NavLink } from 'react-router-dom'
 
 export default function NavBar() {
   return (
@@ -8,9 +8,21 @@ export default function NavBar() {
 
     <div className='nav__options'>
         <ul>
-            <li>Home</li>
-            <li>Nosotros</li>
-            <li>Contacto</li>
+            <li>
+              <NavLink to='/'>
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='/login'>
+                Login
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='/signup'>
+                Signup
+              </NavLink>
+            </li>
         </ul>
     </div>
    </nav>

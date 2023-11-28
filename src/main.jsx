@@ -1,12 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import NavBar from './components/navBar/NavBar.jsx'
-import Items from './pages/items/Items.jsx'
+import { BrowserRouter } from 'react-router-dom'
 import './index.scss'
+import RoutesIndex from './routes/RoutesIndex.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <NavBar />
-    <Items />
+    <BrowserRouter>
+      <NavBar />
+      <RoutesIndex />
+    </BrowserRouter>
   </React.StrictMode>,
 )
