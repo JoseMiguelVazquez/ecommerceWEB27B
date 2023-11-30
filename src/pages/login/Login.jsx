@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { loginUserService } from "../../services/userServices"
 import './Login.scss'
 
 export default function Login() {
@@ -6,13 +7,26 @@ export default function Login() {
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
 
+  /*useEffect(()=>{
+    axios.get('http://localhost:3000/items') //realiza una petición a la API local
+      .then((response) => { //con axios no necesitamos extraer el json
+        console.log(response.data) // podemos directamente usar nuestra respuesta,  se encuentra en la propiedad data
+      })
+      .catch((error) => { //si hay algun error en la petición
+        console.error(error.message) // imprimir error en consola
+      })
+  }, [])*/
+  
+  
   const handleSubmit = (event) => {
     event.preventDefault()
     const submittedData = {
       email,
       password
     }
-    console.log(submittedData)
+    loginUserService(submittedData)
+      .then((response) => console.log(response.data))
+      .catch((error) => console.error(error.message))
     setEmail('')
     setPassword('')
   }
@@ -29,7 +43,7 @@ export default function Login() {
               type='text'
               name='email'
               placeholder='correo@mail.com'
-              id='simple-email'
+              id='email'
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               className="form__form-group__input"
@@ -41,7 +55,7 @@ export default function Login() {
             <input
               type={showPassword ? 'text ' : 'password'}
               name='password'
-              id='simple-password'
+              id='password'
               value={password}
               onChange={(event) => setPassword(event.target.value)}
               className="form__form-group__input"
