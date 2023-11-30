@@ -30,7 +30,7 @@ export default function Items() {
                     <p>{item.price}</p>
                 </div>
             ))
-}
+            }
         </div>
     </section>
   )
