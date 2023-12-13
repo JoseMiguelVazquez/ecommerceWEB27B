@@ -1,0 +1,29 @@
+.aside-container {
+    min-width: 15%;
+    width: 20%;
+    padding: 40px 0px 40px 25px;
+    height: 100vh;
+    box-shadow:0px 10px 8px 0px rgba(188, 188, 188, 0.5);
+    position: fixed;
+    .aside__content {
+      width: 100%;
+      ul {
+        width: 100%;
+        li {
+          list-style: none;
+          padding: 10px;
+          margin: 10px;
+          a {
+            text-decoration: none;
+          }
+          &:hover {
+            box-shadow: 0px 10px 8px 0px rgba(175, 174, 174, 0.5);
+            border-radius: 5px;
+          }
+        }
+       
+      }
+      
+    }
+    
+  }

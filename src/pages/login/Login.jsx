@@ -6,17 +6,6 @@ export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
-
-  /*useEffect(()=>{
-    axios.get('http://localhost:3000/items') //realiza una petición a la API local
-      .then((response) => { //con axios no necesitamos extraer el json
-        console.log(response.data) // podemos directamente usar nuestra respuesta,  se encuentra en la propiedad data
-      })
-      .catch((error) => { //si hay algun error en la petición
-        console.error(error.message) // imprimir error en consola
-      })
-  }, [])*/
-  
   
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -25,7 +14,8 @@ export default function Login() {
       password
     }
     loginUserService(submittedData)
-      .then((response) => console.log(response.data))
+      .then((response) => localStorage.setItem('token', response.data.token))
+      .then(() => window.location.href = '/')
       .catch((error) => console.error(error.message))
     setEmail('')
     setPassword('')
